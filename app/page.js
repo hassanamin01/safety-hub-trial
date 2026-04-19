@@ -22,6 +22,8 @@ export default function Home() {
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 16,
         alignItems: 'stretch',
+        flex: 1,
+        minHeight: 0,
       }}>
         <IncidentsDashboardCard />
         <TimeLostToInjuryCard />
@@ -34,6 +36,8 @@ export default function Home() {
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 16,
         alignItems: 'stretch',
+        flex: 1,
+        minHeight: 0,
       }}>
         <DailyHazardAssessmentsCard />
         <ClaimedToDateCard />

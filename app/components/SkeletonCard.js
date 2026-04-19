@@ -2,8 +2,9 @@ export default function SkeletonCard({ tall = false }) {
   return (
     <div style={{
       background: 'white', borderRadius: 8, padding: 16,
-      minHeight: tall ? 300 : 220,
+      height: '100%', minHeight: tall ? 300 : 220,
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+      boxSizing: 'border-box',
     }}>
       {/* Header row */}
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
