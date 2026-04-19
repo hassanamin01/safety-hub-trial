@@ -122,14 +122,14 @@ export default function IncidentsDashboardCard({ isEmpty = false }) {
 
   return (
     <div style={{ display: 'flex', gap: 0, height: '100%' }}>
-      <Card shadowStrength={1} style={{ padding: 16, flex: 1, minWidth: 0, height: '100%' }}>
+      <Card shadowStrength={1} style={{ padding: 16, flex: 1, minWidth: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
         {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexShrink: 0 }}>
           <Typography intent="h3" weight="semibold" color="gray15">
             Incidents per Manpower Log
           </Typography>
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <Button variant="tertiary" size="sm" onClick={() => setIsPanelOpen(true)}>View More</Button>
+            <Button variant="secondary" size="sm" onClick={() => setIsPanelOpen(true)}>View More</Button>
             <Dropdown aria-label="Card options" icon={<EllipsisVertical size="sm" />} variant="tertiary" size="sm">
               <Dropdown.Item>Export</Dropdown.Item>
               <Dropdown.Item>Edit</Dropdown.Item>
@@ -139,7 +139,7 @@ export default function IncidentsDashboardCard({ isEmpty = false }) {
         </div>
 
         {/* Date range */}
-        <div style={{ marginBottom: 10 }}>
+        <div style={{ marginBottom: 10, flexShrink: 0 }}>
           <Dropdown label={dateRange} size="sm" onSelect={({ item }) => setDateRange(item)}>
             {DATE_RANGE_OPTIONS.map((opt) => (
               <Dropdown.Item key={opt} item={opt} selected={opt === dateRange}>{opt}</Dropdown.Item>
@@ -147,7 +147,7 @@ export default function IncidentsDashboardCard({ isEmpty = false }) {
           </Dropdown>
         </div>
 
-        <div>
+        <div style={{ flexShrink: 0 }}>
           <ChartLegend />
         </div>
 
@@ -159,7 +159,7 @@ export default function IncidentsDashboardCard({ isEmpty = false }) {
             <EmptyState.Description>No incidents were reported in the selected period.</EmptyState.Description>
           </EmptyState>
         ) : (
-          <div style={{ height: 200 }}>
+          <div style={{ flex: 1, minHeight: 0 }}>
             <IncidentsChart data={shortData} />
           </div>
         )}

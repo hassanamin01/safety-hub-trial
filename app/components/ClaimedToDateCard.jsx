@@ -32,8 +32,7 @@ export default function ClaimedToDateCard() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
         <Typography intent="h3" weight="semibold" color="gray15">Claimed to Date</Typography>
         <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button variant="primary" size="sm" icon={<Plus size="sm" />}
-            style={{ background: 'hsl(19,100%,50%)', border: 'none' }}>
+          <Button variant="secondary" size="sm" icon={<Plus size="sm" />}>
             Create Claim
           </Button>
           <Dropdown aria-label="Card options" icon={<EllipsisVertical size="sm" />} variant="tertiary" size="sm">

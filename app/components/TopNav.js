@@ -20,7 +20,7 @@ function ProcoreLogo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 2160.1 271.3"
-      height="22"
+      height="28"
       style={{ display: 'block', flexShrink: 0 }}
       aria-label="Procore"
     >
@@ -44,7 +44,7 @@ export default function TopNav() {
   return (
     <header style={{
       height: 56, background: '#000000',
-      display: 'flex', alignItems: 'center', padding: '0 8px', gap: 4,
+      display: 'flex', alignItems: 'center', padding: '0 16px', gap: 12,
       flexShrink: 0, zIndex: 100,
     }}>
       {/* Hamburger */}
@@ -98,7 +98,7 @@ export default function TopNav() {
       </div>
 
       {/* Right nav icons */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 2, marginLeft: 'auto' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginLeft: 'auto' }}>
         <Tooltip overlay="Help" placement="bottom">
           <Button variant="tertiary" icon={<Help size="md" />} aria-label="Help" style={{ color: '#ffffff' }} />
         </Tooltip>

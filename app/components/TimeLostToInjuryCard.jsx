@@ -61,20 +61,20 @@ function CustomTooltip({ active, payload, label }) {
 function TimeLostChart({ data }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 4, right: 8, left: 4, bottom: 0 }}>
+      <BarChart data={data} margin={{ top: 4, right: 8, left: 4, bottom: 24 }}>
         <CartesianGrid vertical={false} stroke={COLORS.grid} strokeDasharray="4 4" />
         <XAxis
           dataKey="month"
-          tick={{ fontSize: 10, fill: COLORS.tick }}
+          tick={{ fontSize: 11, fill: COLORS.tick }}
           axisLine={false}
           tickLine={false}
-          label={{ value: 'Month', position: 'insideBottom', offset: -2, style: { fontSize: 10, fill: COLORS.tick } }}
+          label={{ value: 'Month', position: 'insideBottom', offset: -12, style: { fontSize: 11, fill: COLORS.tick } }}
         />
         <YAxis
-          tick={{ fontSize: 10, fill: COLORS.tick }}
+          tick={{ fontSize: 11, fill: COLORS.tick }}
           axisLine={false}
           tickLine={false}
-          label={{ value: 'Days', angle: -90, position: 'insideLeft', offset: 14, style: { fontSize: 10, fill: COLORS.tick, textAnchor: 'middle' } }}
+          label={{ value: 'Days', angle: -90, position: 'insideLeft', offset: 14, style: { fontSize: 11, fill: COLORS.tick, textAnchor: 'middle' } }}
         />
         <Tooltip cursor={{ fill: 'rgba(0,0,0,0.04)' }} content={<CustomTooltip />} />
         <Bar dataKey="actualWork" name="Actual Work"    stackId="a" fill={COLORS.actual}    maxBarSize={32} radius={[0,0,0,0]} />

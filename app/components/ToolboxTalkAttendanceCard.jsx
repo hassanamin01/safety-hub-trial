@@ -97,7 +97,7 @@ export default function ToolboxTalkAttendanceCard({ isEmpty = false }) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexShrink: 0 }}>
           <Typography intent="h3" weight="semibold" color="gray15">Toolbox Talk Attendance</Typography>
           <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Button variant="tertiary" size="sm" onClick={() => setPanelOpen(true)}>View More</Button>
+            <Button variant="secondary" size="sm" onClick={() => setPanelOpen(true)}>View More</Button>
             <Button variant="tertiary" size="sm" icon={<Fullscreen size="sm" />} aria-label="Expand" />
             <Dropdown aria-label="Card options" icon={<EllipsisVertical size="sm" />} variant="tertiary" size="sm">
               <Dropdown.Item>Export</Dropdown.Item>
