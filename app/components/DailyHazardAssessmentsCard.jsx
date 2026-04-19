@@ -47,8 +47,8 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
     return () => ro.disconnect();
   }, []);
 
-  // Fill width OR height — whichever is the binding constraint
-  const outerR = Math.min(size.w * 0.47, size.h * 0.93);
+  // Fill width OR height — scaled down to leave breathing room
+  const outerR = Math.min(size.w * 0.36, size.h * 0.72);
   const innerR = outerR * 0.63;
   const labelFontSize = Math.max(24, Math.round(outerR * 0.3));
 

@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <StyledComponentsRegistry>
-          <TopNavWrapper />
-          <PageHeaderWrapper />
-          <TabBarWrapper />
+          <div style={{ position: 'sticky', top: 0, zIndex: 300, flexShrink: 0 }}>
+            <TopNavWrapper />
+            <PageHeaderWrapper />
+            <TabBarWrapper />
+          </div>
           {children}
         </StyledComponentsRegistry>
       </body>

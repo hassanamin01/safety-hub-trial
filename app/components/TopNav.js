@@ -20,7 +20,7 @@ function ProcoreLogo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 2160.1 271.3"
-      height="28"
+      height="18"
       style={{ display: 'block', flexShrink: 0 }}
       aria-label="Procore"
     >
