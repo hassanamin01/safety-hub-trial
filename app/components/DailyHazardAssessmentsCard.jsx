@@ -47,8 +47,7 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
     return () => ro.disconnect();
   }, []);
 
-  // Fill width OR height — scaled down to leave breathing room
-  const outerR = Math.min(size.w * 0.36, size.h * 0.72);
+  const outerR = Math.min(size.w * 0.24, size.h * 0.52);
   const innerR = outerR * 0.63;
   const labelFontSize = Math.max(24, Math.round(outerR * 0.3));
 
