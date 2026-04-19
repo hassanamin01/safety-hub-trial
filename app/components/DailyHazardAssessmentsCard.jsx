@@ -50,6 +50,8 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
   const outerR = Math.min(size.w * 0.24, size.h * 0.52);
   const innerR = outerR * 0.63;
   const labelFontSize = Math.max(24, Math.round(outerR * 0.3));
+  const labelAreaH = 52; // reserved px below the flat edge for the label
+  const cy = size.h - labelAreaH; // arch center = flat edge sits exactly above label
 
   return (
     <div style={{ height: '100%' }}>
@@ -75,7 +77,7 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
               <Pie
                 data={gaugeData}
                 cx={size.w / 2}
-                cy={size.h}
+                cy={cy}
                 startAngle={180}
                 endAngle={0}
                 innerRadius={innerR}
@@ -93,16 +95,21 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
             </PieChart>
           )}
 
-          {/* Center label — sits just above the flat edge of the arc */}
+          {/* Center label — sits in the reserved area below the flat edge */}
           <div style={{
             position: 'absolute',
-            bottom: '10%',
+            bottom: 0,
+            height: labelAreaH,
             left: '50%',
             transform: 'translateX(-50%)',
             textAlign: 'center',
             lineHeight: 1.2,
             pointerEvents: 'none',
             whiteSpace: 'nowrap',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
             <div style={{ fontSize: labelFontSize, fontWeight: 700, color: 'hsl(200,8%,10%)' }}>
               {isEmpty ? 0 : TOTAL}
