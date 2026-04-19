@@ -11,39 +11,18 @@ export default function Home() {
       flex: 1,
       background: 'hsl(200, 8%, 96%)',
       padding: '16px 16px 24px',
-      display: 'flex',
-      flexDirection: 'column',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateRows: '1fr 1fr',
       gap: 16,
+      minHeight: 0,
     }}>
-
-      {/* Top row */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: 16,
-        alignItems: 'stretch',
-        flex: 1,
-        minHeight: 0,
-      }}>
-        <IncidentsDashboardCard />
-        <TimeLostToInjuryCard />
-        <SkeletonCard tall />
-      </div>
-
-      {/* Bottom row */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: 16,
-        alignItems: 'stretch',
-        flex: 1,
-        minHeight: 0,
-      }}>
-        <DailyHazardAssessmentsCard />
-        <ClaimedToDateCard />
-        <ToolboxTalkAttendanceCard />
-      </div>
-
+      <IncidentsDashboardCard />
+      <TimeLostToInjuryCard />
+      <SkeletonCard />
+      <DailyHazardAssessmentsCard />
+      <ClaimedToDateCard />
+      <ToolboxTalkAttendanceCard />
     </main>
   );
 }

@@ -1,8 +1,8 @@
-export default function SkeletonCard({ tall = false }) {
+export default function SkeletonCard() {
   return (
     <div style={{
       background: 'white', borderRadius: 8, padding: 16,
-      height: '100%', minHeight: tall ? 300 : 220,
+      height: '100%',
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       boxSizing: 'border-box',
     }}>
@@ -17,7 +17,7 @@ export default function SkeletonCard({ tall = false }) {
       <Skel width="90%"  height={10} mb={10} />
       <Skel width="70%"  height={10} mb={20} />
       {/* Block */}
-      <Skel width="100%" height={tall ? 130 : 70} />
+      <Skel width="100%" height={100} />
     </div>
   );
 }
