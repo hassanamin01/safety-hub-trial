@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <body style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
         <StyledComponentsRegistry>
           <div style={{ position: 'sticky', top: 0, zIndex: 300, flexShrink: 0 }}>
             <TopNavWrapper />
