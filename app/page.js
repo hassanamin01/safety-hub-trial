@@ -1,5 +1,6 @@
 import DailyHazardAssessmentsCard from "./components/DailyHazardAssessmentsCardWrapper";
 import ClaimedToDateCard from "./components/ClaimedToDateCardWrapper";
+import ToolboxTalkAttendanceCard from "./components/ToolboxTalkAttendanceCardWrapper";
 
 const GAP = 16;
 
@@ -26,9 +27,8 @@ export default function Home() {
       gridTemplateRows: 'repeat(2, 1fr)',
       gap: GAP,
     }}>
-      {/* Left column: ClaimedToDate (1/3) + DailyHazard (2/3), spans both rows */}
+      {/* Row 1, Col 1: ClaimedToDate (1/3) + DailyHazard (2/3) stacked in one cell */}
       <div style={{
-        gridRow: 'span 2',
         display: 'flex',
         flexDirection: 'column',
         gap: GAP,
@@ -42,9 +42,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 4 placeholder cards filling columns 2 and 3, rows 1 and 2 */}
+      {/* Row 1, Col 2 & 3 */}
       <PlaceholderCard />
       <PlaceholderCard />
+
+      {/* Row 2, Col 1 */}
+      <ToolboxTalkAttendanceCard />
+
+      {/* Row 2, Col 2 & 3 */}
       <PlaceholderCard />
       <PlaceholderCard />
     </main>
