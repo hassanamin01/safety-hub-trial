@@ -4,13 +4,14 @@ import ToolboxTalkAttendanceCard from "./components/ToolboxTalkAttendanceCardWra
 
 const GAP = 16;
 
-function PlaceholderCard() {
+function PlaceholderCard({ col, row }) {
   return (
     <div style={{
+      gridColumn: col,
+      gridRow: row,
       background: 'white',
       borderRadius: 8,
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-      height: '100%',
     }} />
   );
 }
@@ -27,8 +28,10 @@ export default function Home() {
       gridTemplateRows: 'repeat(2, 1fr)',
       gap: GAP,
     }}>
-      {/* Row 1, Col 1: ClaimedToDate (1/3) + DailyHazard (2/3) stacked in one cell */}
+      {/* Col 1, Row 1: ClaimedToDate (1/3 h) + DailyHazard (2/3 h) */}
       <div style={{
+        gridColumn: '1',
+        gridRow: '1',
         display: 'flex',
         flexDirection: 'column',
         gap: GAP,
@@ -42,16 +45,16 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Row 1, Col 2 & 3 */}
-      <PlaceholderCard />
-      <PlaceholderCard />
+      {/* Col 1, Row 2: Toolbox Talk */}
+      <div style={{ gridColumn: '1', gridRow: '2', minHeight: 0 }}>
+        <ToolboxTalkAttendanceCard />
+      </div>
 
-      {/* Row 2, Col 1 */}
-      <ToolboxTalkAttendanceCard />
-
-      {/* Row 2, Col 2 & 3 */}
-      <PlaceholderCard />
-      <PlaceholderCard />
+      {/* Col 2–3, Rows 1–2: placeholders */}
+      <PlaceholderCard col="2" row="1" />
+      <PlaceholderCard col="3" row="1" />
+      <PlaceholderCard col="2" row="2" />
+      <PlaceholderCard col="3" row="2" />
     </main>
   );
 }
