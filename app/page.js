@@ -1,9 +1,6 @@
-import IncidentsDashboardCard from "./components/IncidentsDashboardCardWrapper";
-import TimeLostToInjuryCard from "./components/TimeLostToInjuryCardWrapper";
 import DailyHazardAssessmentsCard from "./components/DailyHazardAssessmentsCardWrapper";
 import ClaimedToDateCard from "./components/ClaimedToDateCardWrapper";
 import ToolboxTalkAttendanceCard from "./components/ToolboxTalkAttendanceCardWrapper";
-import SkeletonCard from "./components/SkeletonCard";
 
 export default function Home() {
   return (
@@ -13,15 +10,17 @@ export default function Home() {
       padding: '16px 16px 24px',
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
-      gridTemplateRows: '1fr 1fr',
       gap: 16,
       minHeight: 0,
+      alignItems: 'start',
     }}>
-      <IncidentsDashboardCard />
-      <TimeLostToInjuryCard />
-      <SkeletonCard />
-      <DailyHazardAssessmentsCard />
-      <ClaimedToDateCard />
+      {/* Left column: two stacked cards */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <ClaimedToDateCard />
+        <DailyHazardAssessmentsCard />
+      </div>
+
+      {/* Middle column */}
       <ToolboxTalkAttendanceCard />
     </main>
   );
