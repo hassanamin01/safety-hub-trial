@@ -1,6 +1,8 @@
 import DailyHazardAssessmentsCard from "./components/DailyHazardAssessmentsCardWrapper";
 import ClaimedToDateCard from "./components/ClaimedToDateCardWrapper";
 import ToolboxTalkAttendanceCard from "./components/ToolboxTalkAttendanceCardWrapper";
+import IncidentsDashboardCard from "./components/IncidentsDashboardCardWrapper";
+import TimeLostToInjuryCard from "./components/TimeLostToInjuryCardWrapper";
 
 const GAP = 16;
 
@@ -28,7 +30,7 @@ export default function Home() {
       gridTemplateRows: 'repeat(2, 1fr)',
       gap: GAP,
     }}>
-      {/* Col 1, Row 1: ClaimedToDate (1/3 h) + DailyHazard (2/3 h) */}
+      {/* Col 1, Row 1: ClaimedToDate (50%) + DailyHazard (50%) */}
       <div style={{
         gridColumn: '1',
         gridRow: '1',
@@ -37,10 +39,10 @@ export default function Home() {
         gap: GAP,
         minHeight: 0,
       }}>
-        <div style={{ flex: 2, minHeight: 0, overflow: 'hidden' }}>
+        <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
           <ClaimedToDateCard />
         </div>
-        <div style={{ flex: 3, minHeight: 0, overflow: 'hidden' }}>
+        <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
           <DailyHazardAssessmentsCard />
         </div>
       </div>
@@ -50,9 +52,17 @@ export default function Home() {
         <ToolboxTalkAttendanceCard />
       </div>
 
-      {/* Col 3, Row 1 + Col 1–3, Row 2: placeholders */}
-      <PlaceholderCard col="3" row="1" />
-      <PlaceholderCard col="1" row="2" />
+      {/* Col 3, Row 1: Incidents */}
+      <div style={{ gridColumn: '3', gridRow: '1', minHeight: 0 }}>
+        <IncidentsDashboardCard />
+      </div>
+
+      {/* Col 1, Row 2: Time Lost */}
+      <div style={{ gridColumn: '1', gridRow: '2', minHeight: 0 }}>
+        <TimeLostToInjuryCard />
+      </div>
+
+      {/* Col 2–3, Row 2: placeholders */}
       <PlaceholderCard col="2" row="2" />
       <PlaceholderCard col="3" row="2" />
     </main>
