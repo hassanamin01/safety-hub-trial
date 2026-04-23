@@ -6,9 +6,9 @@ import { EllipsisVertical } from '@procore/core-icons';
 import { Cell, Pie, PieChart, Tooltip } from 'recharts';
 
 const STATUSES = [
-  { key: 'complete',   label: 'Complete',    color: 'hsl(170,65%,40%)', pct: 52 },
-  { key: 'inProgress', label: 'In Progress', color: 'hsl(260,65%,55%)', pct: 28 },
-  { key: 'open',       label: 'Open',        color: 'hsl(218,75%,50%)', pct: 20 },
+  { key: 'open',       label: 'Open',        color: 'hsl(218,75%,50%)', pct: 17 },
+  { key: 'inProgress', label: 'In Progress', color: 'hsl(280,55%,35%)', pct: 31 },
+  { key: 'complete',   label: 'Complete',    color: 'hsl(170,50%,45%)', pct: 52 },
 ];
 
 const EMPTY_SEGMENT = [{ key: 'empty', label: '', color: 'hsl(200,8%,88%)', value: 100 }];
@@ -47,8 +47,8 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
     return () => ro.disconnect();
   }, []);
 
-  const outerR = Math.min(size.w * 0.24, size.h * 0.52);
-  const innerR = outerR * 0.63;
+  const outerR = Math.min(size.w * 0.38, size.h * 0.65);
+  const innerR = outerR * 0.55;
   const labelFontSize = Math.max(24, Math.round(outerR * 0.3));
   const labelAreaH = 52; // reserved px below the flat edge for the label
   const cy = size.h - labelAreaH; // arch center = flat edge sits exactly above label
@@ -120,15 +120,15 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
 
         {/* Horizontal legend */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: 20, paddingTop: 8, flexShrink: 0, flexWrap: 'wrap' }}>
-          {STATUSES.map(({ key, label, color, pct }) => (
-            <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          {[...STATUSES].reverse().map(({ key, label, color, pct }) => (
+            <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{
-                width: 10, height: 10, borderRadius: '50%',
+                width: 12, height: 12, borderRadius: '50%',
                 background: isEmpty ? 'hsl(200,8%,80%)' : color,
                 flexShrink: 0,
               }} />
-              <span style={{ fontSize: 12, color: 'hsl(200,8%,35%)' }}>
-                <strong>{isEmpty ? '0' : pct}%</strong> {label}
+              <span style={{ fontSize: 14, color: 'hsl(200,8%,35%)' }}>
+                <strong style={{ color: 'hsl(200,8%,10%)' }}>{isEmpty ? '0' : pct}%</strong> {label}
               </span>
             </div>
           ))}
