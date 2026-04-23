@@ -47,11 +47,11 @@ export default function DailyHazardAssessmentsCard({ isEmpty = false }) {
     return () => ro.disconnect();
   }, []);
 
-  const outerR = Math.min(size.w * 0.38, size.h * 0.65);
-  const innerR = outerR * 0.55;
-  const labelFontSize = Math.max(24, Math.round(outerR * 0.3));
-  const labelAreaH = 52; // reserved px below the flat edge for the label
-  const cy = size.h - labelAreaH; // arch center = flat edge sits exactly above label
+  const labelAreaH = 52;
+  const cy = size.h - labelAreaH;
+  const outerR = Math.min(size.w * 0.46, cy * 0.95);
+  const innerR = outerR * 0.52;
+  const labelFontSize = Math.max(28, Math.round(outerR * 0.32));
 
   return (
     <div style={{ height: '100%' }}>
