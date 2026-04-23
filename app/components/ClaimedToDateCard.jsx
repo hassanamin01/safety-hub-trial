@@ -74,7 +74,7 @@ export default function ClaimedToDateCard() {
           </div>
 
           {/* Sparkline — right 55%, full body height, left entry clipped cleanly */}
-          <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: '45%', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: '67%', overflow: 'hidden' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={SPARKLINE[filter]}
