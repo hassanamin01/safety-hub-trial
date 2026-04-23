@@ -27,9 +27,9 @@ export default function ClaimedToDateCard() {
 
   return (
     <div style={{ height: '100%' }}>
-    <Card shadowStrength={1} style={{ padding: 16, height: '100%' }}>
+    <Card shadowStrength={1} style={{ padding: '12px 16px', height: '100%', overflow: 'hidden' }}>
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
         <Typography intent="h3" weight="semibold" color="gray15">Claimed to Date</Typography>
         <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Button variant="secondary" size="sm" icon={<Plus size="sm" />}>
@@ -43,8 +43,8 @@ export default function ClaimedToDateCard() {
         </div>
       </div>
 
-      {/* Quick filter */}
-      <div style={{ marginBottom: 20 }}>
+      {/* Filter + KPI on one row */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Dropdown
           label={filter}
           size="sm"
@@ -54,33 +54,20 @@ export default function ClaimedToDateCard() {
             <Dropdown.Item key={opt} item={opt} selected={opt === filter}>{opt}</Dropdown.Item>
           ))}
         </Dropdown>
-      </div>
 
-      {/* KPI metric — centered */}
-      <div style={{ textAlign: 'center', padding: '24px 0' }}>
-        <Typography intent="small" color="gray45" as="div" style={{ marginBottom: 8 }}>
-          Claimed to Date
-        </Typography>
-
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-          <span style={{ fontSize: 40, fontWeight: 700, color: 'hsl(200,8%,10%)', lineHeight: 1 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ fontSize: 32, fontWeight: 700, color: 'hsl(200,8%,10%)', lineHeight: 1 }}>
             {formatCurrency(amount)}
           </span>
           <span style={{
             display: 'flex', alignItems: 'center', gap: 2,
-            fontSize: 14, fontWeight: 600,
+            fontSize: 13, fontWeight: 600,
             color: isPositive ? 'hsl(125,50%,38%)' : 'hsl(5,85%,48%)',
           }}>
-            {isPositive
-              ? <ArrowUp size="sm" />
-              : <ArrowDown size="sm" />}
+            {isPositive ? <ArrowUp size="sm" /> : <ArrowDown size="sm" />}
             {Math.abs(trend)}%
           </span>
         </div>
-
-        <Typography intent="small" color="gray45" as="div" style={{ marginTop: 8 }}>
-          vs. previous period
-        </Typography>
       </div>
     </Card>
     </div>
