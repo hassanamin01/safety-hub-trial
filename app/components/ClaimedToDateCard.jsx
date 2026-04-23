@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Dropdown, Typography } from '@procore/core-react';
 import { ArrowDown, ArrowUp, EllipsisVertical } from '@procore/core-icons';
-import { Area, AreaChart, ResponsiveContainer, YAxis } from 'recharts';
+import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 // Wave: rises to hump → deep valley → small bump → shoots off top-right
 const SPARKLINE = {
@@ -73,12 +73,12 @@ export default function ClaimedToDateCard() {
             </Dropdown>
           </div>
 
-          {/* Sparkline — right 58%, full body height, clips at card boundary */}
-          <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: '42%' }}>
+          {/* Sparkline — right 55%, full body height, left entry clipped cleanly */}
+          <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: '45%', overflow: 'hidden' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={SPARKLINE[filter]}
-                margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                margin={{ top: 0, right: 0, bottom: 0, left: -24 }}
                 style={{ overflow: 'visible' }}
               >
                 <defs>
@@ -87,7 +87,7 @@ export default function ClaimedToDateCard() {
                     <stop offset="100%" stopColor={lineColor} stopOpacity={0}    />
                   </linearGradient>
                 </defs>
-                {/* domain top = 72 so values above 72 shoot off the chart top */}
+                <XAxis hide padding={{ left: 0, right: 0 }} />
                 <YAxis domain={[0, 72]} hide />
                 <Area
                   type="monotone"
@@ -116,7 +116,7 @@ export default function ClaimedToDateCard() {
               fontSize: 14, color: lineColor, fontWeight: 500,
             }}>
               {isPositive ? <ArrowUp size="sm" /> : <ArrowDown size="sm" />}
-              <span>{Math.abs(trend)}% vs. past month</span>
+              <span>{Math.abs(trend)}%{' '}vs. past month</span>
             </div>
           </div>
 
