@@ -45,14 +45,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Col 1, Row 2: Toolbox Talk */}
-      <div style={{ gridColumn: '1', gridRow: '2', minHeight: 0 }}>
+      {/* Col 2, Row 1: Toolbox Talk */}
+      <div style={{ gridColumn: '2', gridRow: '1', minHeight: 0 }}>
         <ToolboxTalkAttendanceCard />
       </div>
 
-      {/* Col 2–3, Rows 1–2: placeholders */}
-      <PlaceholderCard col="2" row="1" />
+      {/* Col 3, Row 1 + Col 1–3, Row 2: placeholders */}
       <PlaceholderCard col="3" row="1" />
+      <PlaceholderCard col="1" row="2" />
       <PlaceholderCard col="2" row="2" />
       <PlaceholderCard col="3" row="2" />
     </main>
