@@ -37,10 +37,10 @@ export default function Home() {
         gap: GAP,
         minHeight: 0,
       }}>
-        <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+        <div style={{ flex: 2, minHeight: 0, overflow: 'hidden' }}>
           <ClaimedToDateCard />
         </div>
-        <div style={{ flex: 2, minHeight: 0, overflow: 'hidden' }}>
+        <div style={{ flex: 3, minHeight: 0, overflow: 'hidden' }}>
           <DailyHazardAssessmentsCard />
         </div>
       </div>

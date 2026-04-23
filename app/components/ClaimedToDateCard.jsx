@@ -28,14 +28,14 @@ export default function ClaimedToDateCard() {
   return (
     <div style={{ height: '100%' }}>
       <Card shadowStrength={1} style={{
-        padding: '12px 16px',
+        padding: 16,
         height: '100%',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
       }}>
         {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0, marginBottom: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0, marginBottom: 12 }}>
           <Typography intent="h3" weight="semibold" color="gray15">Claimed to Date</Typography>
           <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Button variant="secondary" size="sm">Create Claim</Button>
